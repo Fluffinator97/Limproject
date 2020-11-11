@@ -1,5 +1,15 @@
+/* General Styling */
 .App {
   text-align: center;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+#root {
+  margin: 0;
+  height: 100%;
+
+  
 }
 
 .App-logo {
@@ -13,21 +23,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +31,368 @@
     transform: rotate(360deg);
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: wheat;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Styling for Header.js */
+.header {
+  display: flex;
+  text-align: center;
+  background-color: rgb(255, 99, 87);
+  height: 75px;
+  width: 100%;
+}
+
+.logo {
+  object-fit: contain;
+  height: 100%;
+  margin-left: 5%;
+}
+
+.title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  width: 100%;
+  color: white;
+}
+
+.titleBlackLetter {
+  color: black;
+}
+
+/* Styling for 3DGraph.js.js */
+.first {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+}
+
+/* Styling for InfoBox.js */
+.infoContainer {
+  width: 25%;
+  background-color: white;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 3px 5px 10px black;
+  overflow-x: hidden;
+}
+
+#example-collapse-text {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.kpiTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0%;
+  overflow: hidden;
+}
+
+.infoBoxP {
+  padding: 5px;
+}
+
+.invisible {
+  width: 0.1px;
+  height: 0.1px;
+}
+
+.splashScreenHeader {
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  color: rgb(127, 127, 127);
+  margin-top: 50px;
+}
+
+.splashScreenSize {
+  width: 100%;
+  text-align: center;
+}
+
+.splashScreenTitleBox {
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  color: rgb(127, 127, 127);
+  bottom: 40%;
+}
+
+.splashScreenFooter {
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.splashScreenTitle {
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+}
+
+.overallViewHeader {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+}
+
+.navigationButton {
+  margin: 0;
+}
+
+.overallViewTitle {
+  margin: 0 5% 0 5%;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.entityTitle {
+  margin: 5% 0 5%;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.overallViewSelectionButtons {
+  width: 75px;
+  height: 60px;
+}
+
+.overallViewBindingBox {
+  overflow-x: hidden;
+}
+
+#overall {
+  position: fixed;
+  border-width: 5px 5px 50px 5px;
+  border-style: solid;
+  border-color: black;
+  z-index: 100;
+  pointer-events: none; /* Reset default border */
+  border-radius: 10px;
+}
+
+#entity {
+  /* iframes are inline by default */
+  position: fixed;
+  border-width: 5px 5px 50px 5px;
+  border-style: solid;
+  border-color: black;
+  /* border-color: rgb(175, 167, 141); */
+  z-index: 100;
+  pointer-events: none; /* Reset default border */
+  border-radius: 10px;
+}
+
+#list {
+  position: fixed;
+  border-width: 5px 5px 50px 5px;
+  border-style: solid;
+  border-color: black;
+  z-index: 100;
+  pointer-events: none; /* Reset default border */
+}
+
+.backgroundGradient {
+  background: rgb(242, 242, 242);
+  background: linear-gradient(
+    156deg,
+    rgba(242, 242, 242, 1) 0%,
+    rgba(255, 255, 255, 1) 32%,
+    rgba(191, 191, 191, 1) 100%
+  );
+  
+}
+
+.entityTypeTitle {
+  margin: 5% 0 5%;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(86, 80, 60);
+}
+
+.profileTitle {
+  margin: 5% 0 5%;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.entityExplaination {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: rgb(86, 80, 60);
+}
+
+.qualityPStyle {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+.overallViewSelectionButtonFlex {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 4rem;
+}
+
+.overallViewProductName {
+  width: 100%;
+  bottom: 0;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000000000;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.img-box {
+  height: 35px;
+  bottom: 0;
+  margin: 0 0 6px 6px;
+  position: fixed;
+  z-index: 1000000000;
+  color: white;
+}
+
+.metricsText {
+  margin-top: 2rem;
+}
+
+.overallViewStats {
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  text-align: center;
+  margin: 1px;
+}
+
+.yellowText {
+  color: #9e9408;
+}
+.redText {
+  color: red;
+}
+
+.dataListBox {
+  margin: 2rem 3rem 0 3rem;
+}
+
+.textAndGraphBindingBox {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.graphTitle {
+}
+
+.graphSubTitle {
+}
+
+.graphBodyText {
+  padding: 0 2rem 0 2rem;
+}
+
+.kpiLinkStyling {
+  color: #000000;
+}
+
+.kpiLinkStyling:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+.kpiLinkStyling:hover {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.contentCenter {
+  text-align: center;
+}
+
+.testBox {
+  height: 40px;
+  width: 50px;
+  margin: 0;
+  margin-top: 325px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.badThing {
+  background-color: red;
+}
+
+.show {
+  display: block;
+}
+
+.red {
+  width: auto;
+  height: auro;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.green {
+  width: auto;
+  height: auro;
+  background-color: green;
+  margin: 0;
+  padding: 0;
+}
+
+.orange {
+  width: auto;
+  height: auro;
+  background-color: orange;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for PieChart.js */
