@@ -1,17 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { ForceGraph3D } from "react-force-graph";
-import SpriteText from 'three-spritetext';
+// import SpriteText from 'three-spritetext';
 
+import ProperMockData from "../context/data/properMockData";
 
-
-import FlatMockData from '../context/data/FlatMockData'
-
-import MockData from '../context/data/MockData'
-
-import ProperMockData from '../context/data/properMockData'
-
-
-// var NodeClickedID = 0;
+var NodeClickedID = 0;
 
 function ThreeDGraph() {
   // Setting Sizes from the Graph
@@ -24,21 +17,51 @@ function ThreeDGraph() {
     distRef.current.d3Force("link").distance(70);
   });
 
+//   const goodNodes = ProperMockData.nodes.filter(node => {
+//     return node.group > 50;
+//   });
+
+//   const badNodes = ProperMockData.nodes.filter(node => {
+//     return node.group > 40 && node.group <= 50 ;
+//   });
+
+//    const reallyBadNodes = ProperMockData.nodes.filter(node => {
+//      return node.group <= 40;
+//    });
+
+//   console.log(goodNodes);
+//   console.log(badNodes);
+//   console.log(reallyBadNodes);
+
+//   const allNodes = ProperMockData.nodes.length
+
+//   const numberOfGoodNodes = goodNodes.length
+//   const numberOfBadNodes = badNodes.length
+//   const numberOfReallyBadNodes = reallyBadNodes.length
+
+//   console.log(numberOfGoodNodes)
+//   console.log(numberOfBadNodes)
+//   console.log(numberOfReallyBadNodes)
+
+//    const percentOfGoodNodes = numberOfGoodNodes  / allNodes
+//    const percentOfBadNodes = numberOfBadNodes / allNodes
+//    const percentOfReallyBadNodes = numberOfReallyBadNodes / allNodes
+
+// console.log(percentOfGoodNodes)
+// console.log(percentOfBadNodes)
+// console.log(percentOfReallyBadNodes)
+
+  
   // Setting States
   // const [openInfoBox, setOpenInfoBox] = useState(false);
   // const [openCheatBox, setOpenCheatBox] = useState(false);
-//   const [activeNodeState, setactiveNodeState] = useState()
+  //   const [activeNodeState, setactiveNodeState] = useState()
 
   // Creating OnClick event for opening InfoBox
-  // const handleNodeClick = (FlatMockData) => {
-  //   NodeClickedID = FlatMockData.id;
-  //   if (openCheatBox === false) {
-  //     setOpenInfoBox(true);
-  //     setOpenCheatBox(true);
-  //   } else {
-  //     setOpenCheatBox(false);
-  //   }
-  // };
+  const handleNodeClick = ProperMockData => {
+    NodeClickedID = ProperMockData.id;
+    console.log("You Clicked Node: " + NodeClickedID);
+  };
 
   // const handleClose = () => {
   //   if (openInfoBox === true) {
@@ -50,7 +73,7 @@ function ThreeDGraph() {
 
   // const nodeColor = GraphData.nodes[1].group;
 
-   console.log(ProperMockData);
+  console.log(ProperMockData);
 
   return (
     <div className="first" style={{ height: windowHeight }}>
@@ -86,20 +109,21 @@ function ThreeDGraph() {
       <ForceGraph3D
         graphData={ProperMockData}
         ref={distRef}
-        // nodeColor={node => node.group ? 'red' : 'lightgrey' }
+        nodeColor={node =>
+          node.group <= 40 ? "red" : node.group <= 50 ? "yellow" : "white"
+        }
         // nodeAutoColorBy="group"
         width={windowWidth}
         height={windowHeight}
-        nodeColor={node => 'white'}
-        nodeLabel="name"
+        nodeLabel="group"
         nodeVal="jS"
         nodeOpacity={90}
         linkColor={link => "white"}
         linkWidth={1}
         cooldownTicks={100}
-        // onNodeClick={handleNodeClick}
+        onNodeClick={handleNodeClick}
         backgroundColor="black"
-        onEngineStop={() => distRef.current.zoomToFit(10)}
+        onEngineStop={() => distRef.current.zoomToFit(400, 10)}
         enableNodeDrag={false}
       />
     </div>

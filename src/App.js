@@ -6,7 +6,6 @@ import OverallView from "./components/OverallView";
 import EntityReport from "./components/EntityReport";
 import QualityView from "./components/QualityView";
 import ProfileGraph from "./components/ProfileGraph";
-import ThreeDGraph from "./components/3DGraph";
 import EnterpriseDataModel from "./components/EnterpriseDataModel";
 import "./App.css";
 
@@ -15,9 +14,9 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={TwoDGraph} />
-        <Route path="/overall" component={OverallView} />
+        <Route path="/overall/:name" component={OverallView} />
         <Route path="/entityReport/:name" component={EntityReport} />
-        <Route path="/QualityView" component={QualityView} />
+        <Route path="/QualityView/:name" component={QualityView} />
         <Route path="/profile" component={ProfileGraph} />
         <Route path="/EnterpriseDataModel" component={EnterpriseDataModel} />
       </Switch>

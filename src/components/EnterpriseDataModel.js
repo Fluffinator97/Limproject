@@ -1,24 +1,33 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect  } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { ForceGraph2D } from "react-force-graph";
-import logo from '../assets/images/Logo.png'
+import logo from "../assets/images/Logo.png";
 
-import Enterprise from '../context/data/EnterpriseDataModel'
+import Enterprise from "../context/data/EnterpriseDataModel";
 
 function OverallView() {
-  const path = window.location.pathname;
   const windowWidth = window.innerWidth;
-  const fullWindowHeight = window.innerHeight
+  const fullWindowHeight = window.innerHeight;
   const windowHeight = window.innerHeight - 100;
 
-  const fgRef = useRef();
+  const distRef = useRef(null);
+
+  useEffect(() => {
+    distRef.current.d3Force("link").distance(100);
+  });
 
   return (
-    <div style={{ height: fullWindowHeight, width: windowWidth, overflow: "hidden" }}>
+    <div
+      style={{
+        height: fullWindowHeight,
+        width: windowWidth,
+        overflow: "hidden"
+      }}
+    >
       <Container fluid>
         <Row style={{ height: 30 }}></Row>
         <Row
@@ -53,7 +62,7 @@ function OverallView() {
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
-            <a href={"/overall/metrics"}>
+            <a href={"/overall/Metrics"}>
               <FontAwesomeIcon icon={faAngleRight} size="3x" />
             </a>
           </Col>
@@ -95,37 +104,39 @@ function OverallView() {
             style={{ textAlign: "center" }}
           >
             <ForceGraph2D
-            ref={fgRef}
+              ref={distRef}
               graphData={Enterprise}
               nodeColor={node => "lightgrey"}
               width={windowWidth}
               height={windowHeight}
               nodeLabel="name "
-              nodeVal="jS"
+              nodeVal={10}
               nodeOpacity="10"
               linkColor={link => "black"}
               linkWidth={0.5}
               cooldownTicks={100}
-              nodeCanvasObjectMode={() => 'after'}
+              nodeCanvasObjectMode={() => "after"}
               nodeCanvasObject={(node, ctx, globalScale) => {
                 const label = node.name;
-                ctx.font = `12px Sans-Serif`;
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillStyle = 'Black'; //node.color;
+                ctx.font = `10px Sans-Serif`;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillStyle = "Black"; //node.color;
                 ctx.fillText(label, node.x, node.y);
               }}
-              onEngineStop={() => fgRef.current.zoomToFit( 400, 40)}
-              dagLevelDistance="300"
+              onEngineStop={() => distRef.current.zoomToFit(400, 40)}
+              dagLevelDistance={30}
             />
-            <div className="splashScreenFooter">
-            <img src={logo} className="App-logo img-box" alt="logo" />
-              <p>Natural Business Evolution</p>
-            </div>
           </Col>
           <Col></Col>
         </Row>
       </Container>
+            <div style={{ justifyContent: "center" }}>
+              <img src={logo} className="App-logo img-box" alt="logo" />
+              <p className="overallViewProductNameBlack">
+                Natural Business Evolution
+              </p>
+            </div>
     </div>
   );
 }

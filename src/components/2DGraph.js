@@ -1,8 +1,7 @@
-import React, {  } from "react";
+import React from "react";
 import { ForceGraph2D } from "react-force-graph";
 
 import GraphData from "../context/data/LogoData";
-import logo from '../assets/images/Logo.png'
 
 
 
@@ -11,12 +10,11 @@ function TwoDGraph() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight - 50;
   // Setting The dist for the links
+  var delay = 4000
 
-
-  // Setting States
-
-
-  // Creating OnClick event for opening InfoBox
+  setTimeout(function(){
+    window.location = "overall/Metrics";
+   },delay);
 
 
   return (
@@ -38,7 +36,7 @@ function TwoDGraph() {
         linkColor={link => "black"}
         linkWidth={1}
       />
-      <div className="splashScreenTitleBox"><a href={'/overall/metrics'}><h1 className="splashScreenTitle">How are we doing?</h1></a></div>
+      <div className="splashScreenTitleBox"><h1 className="splashScreenTitle">How are we doing?</h1></div>
       <div className="splashScreenFooter">
       {/* <img src={logo} className="App-logo img-box" alt="logo" /> */}
         <p>Natural Business Evolution</p>
