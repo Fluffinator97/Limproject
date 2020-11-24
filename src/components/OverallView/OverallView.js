@@ -15,6 +15,7 @@ import BackgroundNBE from "../../assets/images/BackgroundNBE.jpg";
 function OverallView() {
   const borderHeight = window.innerHeight - 200;
   const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
   
   const path = window.location.pathname;
   const { name } = useParams();
@@ -63,7 +64,7 @@ function OverallView() {
     <div>
       <img
         src={BackgroundNBE}
-        width={windowHeight}
+        width={windowWidth}
         height={windowHeight}
         className="backgroundImageFixer"
         alt="hello"
