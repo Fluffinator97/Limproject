@@ -4,22 +4,38 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import Accordion from "react-bootstrap/Accordion";
 import { ForceGraph2D } from "react-force-graph";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-import logo from "../assets/images/Logo.png";
 import GraphData from "../context/data/MockDataFilter";
+import DoubleCircleDiagram from "./Diagrams/DoubleCircleDiagram";
+import BurnDownChart from "./Diagrams/BurnDownDiagram";
+import VelocityChart from "./Diagrams/VelocityChart";
+import Barchart from "./Diagrams/Barchart";
+import LeadTimeChart from "./Diagrams/LeadTimeChart";
+import "bootstrap/dist/css/bootstrap.min.css";
+import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
 function TwoDGraph() {
-  const windowWidth = window.innerWidth;
 
   console.log(GraphData);
 
   const fgRef = useRef();
 
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
   return (
-    <div className="backgroundGradient" style={{ height: "10%" }}>
+    <div style={{ height: "10%" }}>
+      <img
+        src={BackgroundNBE}
+        width={windowHeight}
+        height={windowHeight}
+        className="backgroundImageFixer"
+        alt="hello"
+      ></img>
       <iframe
         id="overall"
         title="overall"
@@ -57,7 +73,6 @@ function TwoDGraph() {
             style={{ textAlign: "center" }}
           >
             <h1 className="entityTitle">Your Profile</h1>
-            <p>Measurable Progress</p>
           </Col>
           <Col
             lg={{ span: 2 }}
@@ -122,11 +137,11 @@ function TwoDGraph() {
             <ForceGraph2D
               ref={fgRef}
               graphData={GraphData}
-              nodeColor={node => (node.color ? "red" : "white")}
               width={windowWidth}
               height={150}
               nodeLabel="name"
               nodeVal={2}
+              nodeColor={node => node.group <= 40 ? "red" : "white"}
               nodeOpacity={10}
               linkColor={link => "white"}
               linkWidth={1}
@@ -139,7 +154,8 @@ function TwoDGraph() {
                 ctx.font = `${fontSize}px Sans-Serif`;
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
-                ctx.fillStyle = "white"; //node.color;
+                //Here you can choose a specific color by writing t.ex "white" or as I have done node.color to match with the node color
+                ctx.fillStyle = "node.color";
                 ctx.fillText(label, node.x, node.y + 8);
               }}
               onEngineStop={() => fgRef.current.zoomToFit(400, 40)}
@@ -167,104 +183,133 @@ function TwoDGraph() {
             sm={{ span: 10 }}
             xs={{ span: 10 }}
           >
-            <Card style={{marginBottom: "1rem"}}>
-              <Card.Header>
-                <h1 className="profileTitle">Effects</h1>
-              </Card.Header>
-              <Card.Body>
-                <p>
-                  Now that we know who you are, I know who I am. I'm not a
-                  mistake! It all makes sense! In a comic, you know how you can
-                  tell who the arch-villain's going to be? He's the exact
-                  opposite of the hero. And most times they're friends, like you
-                  and me! I should've known way back when... You know why,
-                  David? Because of the kids. They called me Mr Glass.
-                </p>
-              </Card.Body>
-            </Card>
-            <Card style={{marginBottom: "1rem"}}>
-              <Card.Header>
-                <h1 className="profileTitle">Objective impact</h1>
-              </Card.Header>
-              <Card.Body>
-                <p>
-                  Your bones don't break, mine do. That's clear. Your cells
-                  react to bacteria and viruses differently than mine. You don't
-                  get sick, I do. That's also clear. But for some reason, you
-                  and I react the exact same way to water. We swallow it too
-                  fast, we choke. We get some in our lungs, we drown. However
-                  unreal it may seem, we are connected, you and I. We're on the
-                  same curve, just on opposite ends.
-                </p>
-              </Card.Body>
-            </Card>
-            <Card style={{marginBottom: "1rem"}}>
-              <Card.Header>
-                <h1 className="profileTitle">Epic impact</h1>
-              </Card.Header>
-              <Card.Body>
-                <p>
-                  The path of the righteous man is beset on all sides by the
-                  iniquities of the selfish and the tyranny of evil men. Blessed
-                  is he who, in the name of charity and good will, shepherds the
-                  weak through the valley of darkness, for he is truly his
-                  brother's keeper and the finder of lost children. And I will
-                  strike down upon thee with great vengeance and furious anger
-                  those who would attempt to poison and destroy My brothers. And
-                  you will know My name is the Lord when I lay My vengeance upon
-                  thee.
-                </p>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col
-            lg={{ span: 1 }}
-            md={{ span: 1 }}
-            sm={{ span: 1 }}
-            xs={{ span: 1 }}
-          ></Col>
-        </Row>
-        <Row
-          xl={{ cols: 12 }}
-          lg={{ cols: 12 }}
-          md={{ cols: 12 }}
-          sm={{ cols: 12 }}
-          xs={{ cols: 12 }}
-        >
-          <Col
-            lg={{ span: 1 }}
-            md={{ span: 1 }}
-            sm={{ span: 1 }}
-            xs={{ span: 1 }}
-          ></Col>
-          <Col
-            lg={{ span: 10 }}
-            md={{ span: 10 }}
-            sm={{ span: 10 }}
-            xs={{ span: 10 }}
-          >
-            <Card style={{ marginBottom: 100 }}>
+            <Card style={{ marginBottom: "1rem" }}>
               <Card.Header>
                 <h1 className="profileTitle">Involved Features</h1>
               </Card.Header>
               <Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroup.Item>
-                    <a href="/entityReport">
+                    <a href="/entityReport/Feature 1">
                       <p>Feature 1 58%</p>
                     </a>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <a href="/entityReport">
+                    <a href="/entityReport/Feature 2">
                       <p>Feature 2 64%</p>
                     </a>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <a href="/entityReport">
+                    <a href="/entityReport/Feature 3">
                       <p>Feature 3 82%</p>
                     </a>
                   </ListGroup.Item>
                 </ListGroup>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ marginBottom: 100, padding: 0 }}>
+              <Card.Header>
+                <h1 className="profileTitle">KPI's</h1>
+                {/* <p>Story Points: 100</p> */}
+              </Card.Header>
+              <Card.Body style={{ padding: 1, paddingTop: 10 }}>
+                <Accordion>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                      <h1 className="entityTypeTitle">Completed</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <DoubleCircleDiagram />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                      <h1 className="entityTypeTitle">Forecast</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <BurnDownChart />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="2">
+                      <h1 className="entityTypeTitle"> Velocity</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="2">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <VelocityChart />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="3">
+                      <h1 className="entityTypeTitle">Planned vs Actual</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="3">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <Barchart />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="4">
+                      <h1 className="entityTypeTitle">Lead time</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="4">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <LeadTimeChart />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="5">
+                      <h1 className="entityTypeTitle">Cycle Time</h1>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="5">
+                      <Card.Body>
+                        <p className="entityExplanation">
+                          Nunc lobortis dui sed justo mattis auctor. Praesent
+                          erat magna, finibus eu leo a, volutpat viverra risus.
+                          Aenean pellentesque interdum erat ut lacinia.
+                        </p>
+                        <LeadTimeChart />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                </Accordion>
               </Card.Body>
             </Card>
           </Col>
@@ -276,9 +321,139 @@ function TwoDGraph() {
           ></Col>
         </Row>
       </Container>
-      <div style={{ justifyContent: "center" }}>
-        <img src={logo} className="App-logo img-box" alt="logo" />
+      <div
+        style={{ justifyContent: "center", backgroundColor: "black" }}
+        className="footerLogoBox"
+      >
+        <svg width="50" height="50" className="logoSVG">
+          <g>
+            <title>background</title>
+            <rect fill="#000" height="50" width="50" y="-1" x="-1" />
+            <g
+              display="none"
+              overflow="visible"
+              y="0"
+              x="0"
+              height="100%"
+              width="100%"
+            >
+              <rect
+                fill="url(#gridpattern)"
+                strokeWidth="0"
+                y="0"
+                x="0"
+                height="100%"
+                width="100%"
+              />
+            </g>
+          </g>
+          <g>
+            <title>Layer 1</title>
+            <g stroke="null" id="svg_10">
+              <ellipse
+                stroke="#b7aa7c"
+                ry="3.20022"
+                rx="3.20022"
+                id="svg_1"
+                cy="12.52605"
+                cx="5.60831"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="4.51795"
+                rx="4.51795"
+                id="svg_2"
+                cy="13.84378"
+                cx="36.6505"
+                fillOpacity="null"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="4.14146"
+                rx="4.14146"
+                id="svg_3"
+                cy="42.11848"
+                cx="17.65619"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="5.5"
+                rx="5.5"
+                id="svg_4"
+                cy="21"
+                cx="21"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="#fff"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_5"
+                y2="19"
+                x2="16"
+                y1="14"
+                x1="8"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_7"
+                y2="21"
+                x2="26"
+                y1="17"
+                x1="33"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_8"
+                y2="26.14626"
+                x2="19.78218"
+                y1="37.91971"
+                x1="18.10378"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <ellipse
+                stroke="#ff3200"
+                ry="2"
+                rx="2"
+                id="svg_9"
+                cy="26"
+                cx="26"
+                fillOpacity="null"
+                fill="#fff"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  dur="5s"
+                  type="rotate"
+                  from="0 21 21"
+                  to="360 21 21"
+                  repeatCount="indefinite"
+                />
+              </ellipse>
+            </g>
+          </g>
+        </svg>
         <p className="overallViewProductName">Natural Business Evolution</p>
+        <p className="overallViewProductNameMP">Measurable Progress</p>
       </div>
     </div>
   );

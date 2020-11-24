@@ -10,59 +10,48 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function BurnDownDiagram() {
+function VelocityChart() {
   const data = [
     {
       name: "Vecka 1",
-      Actual: 100,
-      Estimated: 100
+      Estimated: 50,
     },
     {
       name: "Vecka 2",
-      Actual: 95,
-      Estimated: 87.5
+      Estimated: 40,
     },
     {
       name: "Vecka 3",
-      Actual: 60,
-      Estimated: 75
+      Estimated: 60,
     },
     {
       name: "Vecka 4",
-      Actual: 55,
-      Estimated: 62.5
+      Estimated: 70,
     },
     {
       name: "Vecka 5",
-      Actual: 60,
-      Estimated: 50
+      Estimated: 85,
     },
     {
       name: "Vecka 6",
-      Actual: 40,
-      Estimated: 37.5
+      Estimated: 60,
     },
     {
       name: "Vecka 7",
-
-      Estimated: 25
+      Estimated: 75
     },
     {
       name: "Vecka 8",
-
-      Estimated: 12.5
+      Estimated: 90
     },
     {
       name: "Vecka 9",
-  
-      Estimated: 0
+      Estimated: 90
     }, 
     {
       name: "Vecka 10",
-
-      Estimated: 0
+      Estimated: 95
     }
-
   ];
 
   return (
@@ -84,10 +73,9 @@ function BurnDownDiagram() {
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />
-        <Line type="monotone" dataKey="Actual" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
   );
 }
 
-export default BurnDownDiagram;
+export default VelocityChart;

@@ -5,65 +5,48 @@ import Col from "react-bootstrap/Col";
 import { Switch, Route, useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/images/Logo.png";
-import ProperMockData from "../context/data/properMockData";
+import properMockData from "../../context/data/properMockData";
 
 import ThreeDGraph from "./3DGraph";
 import OverallViewList from "./OverallViewList";
 import OverallViewMetrics from "./OverallViewMetrics";
+import BackgroundNBE from "../../assets/images/BackgroundNBE.jpg";
 
-function OverallView(props) {
+function OverallView() {
   const borderHeight = window.innerHeight - 200;
-
+  const windowHeight = window.innerHeight;
+  
   const path = window.location.pathname;
-
   const { name } = useParams();
-
   const [metricState, setMetricState] = useState(false);
   const [spaceState, setSpaceState] = useState(false);
   const [listState, setListState] = useState(false);
-
   const [padder, setPadder] = useState(0);
 
-  const goodNodes = ProperMockData.nodes.filter(node => {
+
+  const goodNodes = properMockData.nodes.filter((node) => {
     return node.group > 50;
   });
-
-  const badNodes = ProperMockData.nodes.filter(node => {
+  const badNodes = properMockData.nodes.filter((node) => {
     return node.group > 40 && node.group <= 50;
   });
-
-  const reallyBadNodes = ProperMockData.nodes.filter(node => {
+  const reallyBadNodes = properMockData.nodes.filter((node) => {
     return node.group <= 40;
   });
 
-  console.log(goodNodes);
-  console.log(badNodes);
-  console.log(reallyBadNodes);
-
-  const allNodes = ProperMockData.nodes.length;
-
+  const allNodes = properMockData.nodes.length;
   const numberOfGoodNodes = (goodNodes.length / allNodes) * 100;
   const numberOfBadNodes = (badNodes.length / allNodes) * 100;
   const numberOfReallyBadNodes = (reallyBadNodes.length / allNodes) * 100;
-
-  console.log('Number of ' + numberOfGoodNodes);
-  console.log('Number of ' + numberOfBadNodes);
-  console.log('Number of ' + numberOfReallyBadNodes);
-
-  const percentOfGoodNodes = numberOfGoodNodes.toFixed(2)
-  const percentOfBadNodes = numberOfBadNodes.toFixed(2)
-  const percentOfReallyBadNodes = numberOfReallyBadNodes.toFixed(2)
-
-  console.log(percentOfGoodNodes);
-  console.log(percentOfBadNodes);
-  console.log(percentOfReallyBadNodes);
+  const percentOfGoodNodes = numberOfGoodNodes.toFixed(2);
+  const percentOfBadNodes = numberOfBadNodes.toFixed(2);
+  const percentOfReallyBadNodes = numberOfReallyBadNodes.toFixed(2);
 
   if (path === "/overall/Metrics" && metricState === false) {
     setMetricState(true);
     setSpaceState(false);
     setListState(false);
-    setPadder(400);
+    setPadder(200);
   } else if (path === "/overall/Space" && spaceState === false) {
     setMetricState(false);
     setSpaceState(true);
@@ -76,14 +59,15 @@ function OverallView(props) {
     setPadder(0);
   }
 
-  console.log("Metrics: " + metricState);
-  console.log("Space: " + spaceState);
-  console.log("List: " + listState);
-
-  console.log(path);
-
   return (
-    <div className="backgroundGradient">
+    <div>
+      <img
+        src={BackgroundNBE}
+        width={windowHeight}
+        height={windowHeight}
+        className="backgroundImageFixer"
+        alt="hello"
+      ></img>
       <iframe
         id="overall"
         title="overall"
@@ -144,7 +128,7 @@ function OverallView(props) {
             style={{ textAlign: "center" }}
           >
             <div className="">
-              <p className=" overallViewStats ">Measurable Progress</p>
+              {/* <p className=" overallViewStats ">Measurable Progress</p> */}
               <p className=" overallViewStats ">Good {percentOfGoodNodes}%</p>
               <p className=" overallViewStats yellowText ">
                 Risk {percentOfBadNodes}%
@@ -173,7 +157,7 @@ function OverallView(props) {
             style={{
               textAlign: "center",
               height: borderHeight,
-              marginBottom: padder
+              marginBottom: padder,
             }}
           >
             <Switch>
@@ -232,9 +216,139 @@ function OverallView(props) {
           )}
         </div>
       </div>
-      <div style={{ justifyContent: "center" }}>
-        <img src={logo} className="App-logo img-box" alt="logo" />
+      <div
+        style={{ justifyContent: "center", backgroundColor: "black" }}
+        className="footerLogoBox"
+      >
+        <svg width="50" height="50" className="logoSVG">
+          <g>
+            <title>background</title>
+            <rect fill="#000" height="50" width="50" y="-1" x="-1" />
+            <g
+              display="none"
+              overflow="visible"
+              y="0"
+              x="0"
+              height="100%"
+              width="100%"
+            >
+              <rect
+                fill="url(#gridpattern)"
+                strokeWidth="0"
+                y="0"
+                x="0"
+                height="100%"
+                width="100%"
+              />
+            </g>
+          </g>
+          <g>
+            <title>Layer 1</title>
+            <g stroke="null" id="svg_10">
+              <ellipse
+                stroke="#b7aa7c"
+                ry="3.20022"
+                rx="3.20022"
+                id="svg_1"
+                cy="12.52605"
+                cx="5.60831"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="4.51795"
+                rx="4.51795"
+                id="svg_2"
+                cy="13.84378"
+                cx="36.6505"
+                fillOpacity="null"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="4.14146"
+                rx="4.14146"
+                id="svg_3"
+                cy="42.11848"
+                cx="17.65619"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="#fff"
+              />
+              <ellipse
+                stroke="#b7aa7c"
+                ry="5.5"
+                rx="5.5"
+                id="svg_4"
+                cy="21"
+                cx="21"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="#fff"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_5"
+                y2="19"
+                x2="16"
+                y1="14"
+                x1="8"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_7"
+                y2="21"
+                x2="26"
+                y1="17"
+                x1="33"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <line
+                stroke="#b7aa7c"
+                strokeLinecap="null"
+                strokeLinejoin="null"
+                id="svg_8"
+                y2="26.14626"
+                x2="19.78218"
+                y1="37.91971"
+                x1="18.10378"
+                fillOpacity="null"
+                strokeOpacity="null"
+                fill="none"
+              />
+              <ellipse
+                stroke="#ff3200"
+                ry="2"
+                rx="2"
+                id="svg_9"
+                cy="26"
+                cx="26"
+                fillOpacity="null"
+                fill="#fff"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  dur="5s"
+                  type="rotate"
+                  from="0 21 21"
+                  to="360 21 21"
+                  repeatCount="indefinite"
+                />
+              </ellipse>
+            </g>
+          </g>
+        </svg>
         <p className="overallViewProductName">Natural Business Evolution</p>
+        <p className="overallViewProductNameMP">Measurable Progress</p>
       </div>
     </div>
   );

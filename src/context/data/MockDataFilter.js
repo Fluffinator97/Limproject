@@ -1,9 +1,9 @@
-import MockData from './MockData'
+import properMockData from './properMockData'
 
-export const nodes = MockData.nodes.filter(node => {
+export const nodes = properMockData.nodes.filter(node => {
         return node.lowest.toLowerCase() === "yes"
       });
-  export const links = MockData.links.filter(link => {
+  export const links = properMockData.links.filter(link => {
       return link.lowest.toLowerCase() === "yes"
   });
   

@@ -1,10 +1,6 @@
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell, Legend } from "recharts";
 
-// import {
-//     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-//   } from 'recharts';
-
 function DoubleCircleDiagram() {
 
 const data = [

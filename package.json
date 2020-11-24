@@ -13,6 +13,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.3",
+    "core-js": "^2.5.7",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
@@ -21,7 +22,6 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
-    "react-treelist": "^1.2.0",
     "recharts": "^1.8.5",
     "three-spritetext": "^1.5.2"
   },
