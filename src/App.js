@@ -13,12 +13,12 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={LaunchScreen} />
-        <Route path="/overall/:name" component={OverallView} />
-        <Route path="/entityReport/:name" component={EntityReport} />
-        <Route path="/QualityView/:name" component={QualityView} />
-        <Route path="/profile" component={ProfileGraph} />
-        <Route path="/EnterpriseDataModel" component={EnterpriseDataModel} />
+        <Route exact path="/MP/" component={LaunchScreen} />
+        <Route path="/MP/overall/:name" component={OverallView} />
+        <Route path="/MP/entityReport/:name" component={EntityReport} />
+        <Route path="/MP/QualityView/:name" component={QualityView} />
+        <Route path="/MP/profile" component={ProfileGraph} />
+        <Route path="/MP/EnterpriseDataModel" component={EnterpriseDataModel} />
       </Switch>
     </div>
   );
