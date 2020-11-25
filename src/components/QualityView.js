@@ -11,7 +11,7 @@ import { useParams, useHistory } from "react-router";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function QualityView() {
+export default function QualityView() {
   let history = useHistory();
   console.log(history);
 
@@ -463,5 +463,3 @@ function QualityView() {
     </div>
   );
 }
-
-export default QualityView;

@@ -12,7 +12,7 @@ import OverallViewList from "./OverallViewList";
 import OverallViewMetrics from "./OverallViewMetrics";
 import BackgroundNBE from "../../assets/images/BackgroundNBE.jpg";
 
-function OverallView() {
+export default function OverallView() {
   const borderHeight = window.innerHeight - 200;
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
@@ -356,5 +356,3 @@ function OverallView() {
     </div>
   );
 }
-
-export default OverallView;

@@ -18,7 +18,7 @@ import LeadTimeChart from "./Diagrams/LeadTimeChart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
-function TwoDGraph() {
+export default function TwoDGraph() {
 
   console.log(GraphData);
 
@@ -459,5 +459,3 @@ function TwoDGraph() {
     </div>
   );
 }
-
-export default TwoDGraph;

@@ -3,7 +3,7 @@ import { ForceGraph2D } from "react-force-graph";
 
 import GraphData from "../context/data/LogoData";
 
-function TwoDGraph() {
+export default function TwoDGraph() {
   // Setting Sizes from the Graph
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight - 50;
@@ -171,5 +171,3 @@ function TwoDGraph() {
     </div>
   );
 }
-
-export default TwoDGraph;

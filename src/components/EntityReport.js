@@ -13,7 +13,7 @@ import BurnDownChart from "./Diagrams/BurnDownDiagram";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
-function EntityReport() {
+export default function EntityReport() {
   const { name } = useParams();
   console.log(name);
   const capsName = name.toUpperCase();
@@ -465,5 +465,3 @@ function EntityReport() {
     </div>
   );
 }
-
-export default EntityReport;

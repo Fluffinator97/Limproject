@@ -11,7 +11,7 @@ import Table from "react-bootstrap/Table";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function OverallViewMetrics() {
+export default function OverallViewMetrics() {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -297,5 +297,3 @@ function OverallViewMetrics() {
     </div>
   );
 }
-
-export default OverallViewMetrics;

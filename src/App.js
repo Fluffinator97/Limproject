@@ -7,21 +7,35 @@ import EntityReport from "./components/EntityReport";
 import QualityView from "./components/QualityView";
 import ProfileGraph from "./components/ProfileGraph";
 import EnterpriseDataModel from "./components/EnterpriseDataModel";
+import UnderConstructionComp from "./components/UnderConstructionComp";
 import "./App.css";
 
-function App() {
+export default function App() {
+  const mql = window.matchMedia("(max-width: 1000px)");
+  let mobileView = mql.matches;
+
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={LaunchScreen} />
-        <Route path="/overall/:name" component={OverallView} />
-        <Route path="/entityReport/:name" component={EntityReport} />
-        <Route path="/QualityView/:name" component={QualityView} />
-        <Route path="/profile" component={ProfileGraph} />
-        <Route path="/EnterpriseDataModel" component={EnterpriseDataModel} />
+        <Route exact path="/" component={LaunchScreen}/>
+        <Route path="/overall/:name" component={OverallView}/>
+        <Route path="/entityReport/:name" component={EntityReport}/>
+        <Route path="/QualityView/:name" component={QualityView}/>
+        <Route path="/profile" component={ProfileGraph}/>
+        <Route path="/EnterpriseDataModel" component={EnterpriseDataModel}/>
       </Switch>
+      {/* {mobileView ? (
+        <Switch>
+          <Route exact path="/" component={LaunchScreen} />
+          <Route path="/overall/:name" component={OverallView} />
+          <Route path="/entityReport/:name" component={EntityReport} />
+          <Route path="/QualityView/:name" component={QualityView} />
+          <Route path="/profile" component={ProfileGraph} />
+          <Route path="/EnterpriseDataModel" component={EnterpriseDataModel} />
+        </Switch>
+      ) : (
+        <UnderConstructionComp />
+      )} */}
     </div>
   );
 }
-
-export default App;

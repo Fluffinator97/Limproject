@@ -2,7 +2,7 @@ import React from "react";
 
 import properMockData from "../../context/data/properMockData";
 
-function OverallViewList() {
+export default function OverallViewList() {
   const boxHeight = window.innerHeight - 315;
 
   const badNodes = properMockData.nodes
@@ -59,5 +59,3 @@ function OverallViewList() {
     </div>
   );
 }
-
-export default OverallViewList;

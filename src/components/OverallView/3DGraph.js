@@ -5,7 +5,7 @@ import properMockData from "../../context/data/properMockData";
 
 var NodeClickedID = 0;
 
-function ThreeDGraph() {
+export default function ThreeDGraph() {
   // Setting Sizes from the Graph
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight - 300;
@@ -48,5 +48,3 @@ function ThreeDGraph() {
     </div>
   );
 }
-
-export default ThreeDGraph;

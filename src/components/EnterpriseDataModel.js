@@ -10,7 +10,7 @@ import Enterprise from "../context/data/EnterpriseDataModel";
 import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
 
-function EnterpriseDataModel() {
+export default function EnterpriseDataModel() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
 
@@ -107,7 +107,7 @@ function EnterpriseDataModel() {
             <ForceGraph2D
               ref={distRef}
               graphData={Enterprise}
-              nodeColor={(node) => "lightgrey"}
+              nodeColor={(node) => "darkgrey"}
               width={windowWidth - 100}
               height={windowHeight - 150}
               nodeLabel="name "
@@ -116,7 +116,6 @@ function EnterpriseDataModel() {
               linkColor={(link) => "black"}
               linkWidth={0.5}
               cooldownTicks={100}
-              backgroundColor="white"
               nodeCanvasObjectMode={() => "after"}
               nodeCanvasObject={(node, ctx, globalScale) => {
                 const label = node.name;
@@ -271,5 +270,3 @@ function EnterpriseDataModel() {
     </div>
   );
 }
-
-export default EnterpriseDataModel;
