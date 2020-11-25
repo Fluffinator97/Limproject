@@ -226,3 +226,10 @@
   text-align: center;
   margin-top: 1rem;
 }
+
+.overallListObjects {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(127, 127, 127, 0.5);
+  margin-bottom: 1px;
+  padding: 5px 0px 5px 0px;
+}

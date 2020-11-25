@@ -8,11 +8,11 @@ function TwoDGraph() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight - 50;
   // Setting The dist for the links
-  var delay = 2000;
+  // var delay = 2000;
 
-  setTimeout(function () {
-    window.location = "overall/Metrics";
-  }, delay);
+  // setTimeout(function () {
+  //   window.location = "overall/Metrics";
+  // }, delay);
 
   return (
     <div className="first" style={{ height: windowHeight }}>
@@ -37,7 +37,8 @@ function TwoDGraph() {
       <div className="splashScreenTitleBox">
         <h1 className="splashScreenTitle">How are we doing?</h1>
       </div>
-      <div className="splashScreenFooter">
+      <div style={{ justifyContent: "center", backgroundColor: "black" }}
+        className="footerLogoBox">
         <svg width="50" height="50" className="logoSVG">
           <g>
             <title>background</title>
@@ -165,7 +166,7 @@ function TwoDGraph() {
             </g>
           </g>
         </svg>
-        <p>Natural Business Evolution</p>
+        <p className="overallViewProductName">Natural Business Evolution</p>
       </div>
     </div>
   );
