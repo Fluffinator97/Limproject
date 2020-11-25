@@ -8,11 +8,11 @@ function TwoDGraph() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight - 50;
   // Setting The dist for the links
-  // var delay = 2000;
+  var delay = 2000;
 
-  // setTimeout(function () {
-  //   window.location = "overall/Metrics";
-  // }, delay);
+  setTimeout(function () {
+    window.location = "overall/Metrics";
+  }, delay);
 
   return (
     <div className="first" style={{ height: windowHeight }}>
