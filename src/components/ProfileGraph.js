@@ -31,8 +31,9 @@ function TwoDGraph() {
     <div style={{ height: "10%" }}>
       <img
         src={BackgroundNBE}
-        width={windowHeight}
+        width={windowWidth}
         height={windowHeight}
+        style={{objectFit: "cover"}}
         className="backgroundImageFixer"
         alt="hello"
       ></img>

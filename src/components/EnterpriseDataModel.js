@@ -7,12 +7,12 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { ForceGraph2D } from "react-force-graph";
 
 import Enterprise from "../context/data/EnterpriseDataModel";
+import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
 
 function EnterpriseDataModel() {
   const windowWidth = window.innerWidth;
-  const fullWindowHeight = window.innerHeight;
-  const windowHeight = window.innerHeight - 100;
+  const windowHeight = window.innerHeight;
 
   const distRef = useRef(null);
 
@@ -21,13 +21,15 @@ function EnterpriseDataModel() {
   });
 
   return (
-    <div
-      style={{
-        height: fullWindowHeight,
-        width: windowWidth,
-        overflow: "hidden",
-      }}
-    >
+    <div>
+    <img
+    src={BackgroundNBE}
+    width={windowWidth}
+    height={windowHeight}
+    style={{objectFit: "cover"}}
+    className="backgroundImageFixer"
+    alt="hello"
+  ></img>
       <Container fluid>
         <Row style={{ height: 30 }}></Row>
         <Row
@@ -38,18 +40,18 @@ function EnterpriseDataModel() {
           xs={{ cols: 12 }}
         >
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1, offset: 1 }}
+            md={{ span: 1, offset: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
-            <a href={"/profile"}>
+            <a href={"/profile"}  style={{paddingLeft: "60%"}}>
               <FontAwesomeIcon icon={faAngleLeft} size="3x" />
             </a>
           </Col>
           <Col
             lg={{ span: 8 }}
-            md={{ span: 8 }}
+            md={{ span: 6 }}
             sm={{ span: 8 }}
             xs={{ span: 8 }}
             style={{ textAlign: "center" }}
@@ -57,13 +59,14 @@ function EnterpriseDataModel() {
             <p className="overallViewTitle">Enterprise</p>
           </Col>
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1 }}
+            md={{ span: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
+            style={{padding: 0}}
           >
-            <a href={"/overall/Metrics"}>
-              <FontAwesomeIcon icon={faAngleRight} size="3x" />
+            <a href={"/overall/metrics"} >
+              <FontAwesomeIcon icon={faAngleRight} size="3x"/>
             </a>
           </Col>
         </Row>
@@ -97,20 +100,23 @@ function EnterpriseDataModel() {
             md={{ span: 12 }}
             sm={{ span: 12 }}
             xs={{ span: 12 }}
-            style={{ textAlign: "center" }}
+            style={{
+              textAlign: "center"
+            }}
           >
             <ForceGraph2D
               ref={distRef}
               graphData={Enterprise}
               nodeColor={(node) => "lightgrey"}
-              width={windowWidth}
-              height={windowHeight}
+              width={windowWidth - 100}
+              height={windowHeight - 150}
               nodeLabel="name "
               nodeVal={10}
               nodeOpacity="10"
               linkColor={(link) => "black"}
               linkWidth={0.5}
               cooldownTicks={100}
+              backgroundColor="white"
               nodeCanvasObjectMode={() => "after"}
               nodeCanvasObject={(node, ctx, globalScale) => {
                 const label = node.name;
@@ -128,8 +134,11 @@ function EnterpriseDataModel() {
           <Col></Col>
         </Row>
       </Container>
-      <div style={{ justifyContent: "center" }}>
-      <svg width="50" height="50" className="logoSVG">
+      <div
+        style={{ justifyContent: "center", backgroundColor: "black" }}
+        className="footerLogoBox"
+      >
+        <svg width="50" height="50" className="logoSVG">
           <g>
             <title>background</title>
             <rect fill="#000" height="50" width="50" y="-1" x="-1" />
@@ -256,10 +265,8 @@ function EnterpriseDataModel() {
             </g>
           </g>
         </svg>
-        <p className="overallViewProductNameBlack">
-          Natural Business Evolution
-        </p>
-        <p className="overallViewProductNameMPBlack">Measurable Progress</p>
+        <p className="overallViewProductName">Natural Business Evolution</p>
+        <p className="overallViewProductNameMP">Measurable Progress</p>
       </div>
     </div>
   );
