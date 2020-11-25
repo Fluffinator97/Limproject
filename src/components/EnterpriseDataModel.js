@@ -9,7 +9,7 @@ import { ForceGraph2D } from "react-force-graph";
 import Enterprise from "../context/data/EnterpriseDataModel";
 
 
-function OverallView() {
+function EnterpriseDataModel() {
   const windowWidth = window.innerWidth;
   const fullWindowHeight = window.innerHeight;
   const windowHeight = window.innerHeight - 100;
@@ -54,7 +54,7 @@ function OverallView() {
             xs={{ span: 8 }}
             style={{ textAlign: "center" }}
           >
-            <p className="overallViewTitle">Overall View</p>
+            <p className="overallViewTitle">Enterprise</p>
           </Col>
           <Col
             lg={{ span: 2 }}
@@ -265,4 +265,4 @@ function OverallView() {
   );
 }
 
-export default OverallView;
+export default EnterpriseDataModel;
