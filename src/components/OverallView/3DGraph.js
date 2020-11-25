@@ -8,7 +8,7 @@ var NodeClickedID = 0;
 function ThreeDGraph() {
   // Setting Sizes from the Graph
   const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight - 200;
+  const windowHeight = window.innerHeight - 300;
   // Setting The dist for the links
   const distRef = useRef(null);
 

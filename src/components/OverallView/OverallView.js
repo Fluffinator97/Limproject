@@ -75,7 +75,7 @@ function OverallView() {
         title="overall"
         style={{ width: "100%", height: "100%" }}
       ></iframe>
-      <Container>
+      <Container fluid>
         <Row style={{ height: 30 }}></Row>
         <Row
           xl={{ cols: 12 }}
@@ -85,18 +85,18 @@ function OverallView() {
           xs={{ cols: 12 }}
         >
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1, offset: 1 }}
+            md={{ span: 1, offset: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
-            <a href={"/EnterpriseDataModel"}>
+            <a href={"/EnterpriseDataModel"}  style={{paddingLeft: "60%"}}>
               <FontAwesomeIcon icon={faAngleLeft} size="3x" />
             </a>
           </Col>
           <Col
             lg={{ span: 8 }}
-            md={{ span: 8 }}
+            md={{ span: 6 }}
             sm={{ span: 8 }}
             xs={{ span: 8 }}
             style={{ textAlign: "center" }}
@@ -104,13 +104,14 @@ function OverallView() {
             <p className="overallViewTitle">Overall {name}</p>
           </Col>
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1 }}
+            md={{ span: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
+            style={{padding: 0}}
           >
-            <a href={"/profile"}>
-              <FontAwesomeIcon icon={faAngleRight} size="3x" />
+            <a href={"/profile"} >
+              <FontAwesomeIcon icon={faAngleRight} size="3x"/>
             </a>
           </Col>
         </Row>
@@ -148,7 +149,7 @@ function OverallView() {
           md={{ cols: 12 }}
           sm={{ cols: 12 }}
           xs={{ cols: 12 }}
-          style={{ marginTop: 16 }}
+          style={{marginTop: 16 }}
         >
           <Col></Col>
           <Col
