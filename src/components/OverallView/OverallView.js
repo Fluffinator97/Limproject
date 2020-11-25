@@ -16,7 +16,7 @@ function OverallView() {
   const borderHeight = window.innerHeight - 200;
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
-  
+
   const path = window.location.pathname;
   const { name } = useParams();
   const [metricState, setMetricState] = useState(false);
@@ -66,6 +66,7 @@ function OverallView() {
         src={BackgroundNBE}
         width={windowWidth}
         height={windowHeight}
+        style={{objectFit: "cover"}}
         className="backgroundImageFixer"
         alt="hello"
       ></img>
