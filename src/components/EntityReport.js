@@ -240,82 +240,93 @@ export default function EntityReport() {
                   magna, finibus eu leo a, volutpat viverra risus. Aenean
                   pellentesque interdum erat ut lacinia.
                 </p>
-                <h1 className="profileTitle">Involved </h1>
                 {objective ? (
+                  <>
+                  <h1 className="profileTitle">Involved Epics</h1>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Epic 1">
                         <p className="qualityPStyle">Epics 1 58%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Epic 2">
                         <p className="qualityPStyle">Epics 2 64%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Epic 3">
                         <p className="qualityPStyle">Epics 3 82%</p>
                       </a>
                     </ListGroup.Item>
                   </ListGroup>
+                  </>
                 ) : null}
                 {epic ? (
+                  <>
+                  <h1 className="profileTitle">Involved Features</h1>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Feature 1">
                         <p className="qualityPStyle">Feature 1 58%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Feature 2">
                         <p className="qualityPStyle">Feature 2 64%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Feature 3">
                         <p className="qualityPStyle">Feature 3 82%</p>
                       </a>
                     </ListGroup.Item>
                   </ListGroup>
+                  </>
                 ) : null}
                 {feature ? (
+                  <>
+                  <h1 className="profileTitle">Involved Stories</h1>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Story 1">
                         <p className="qualityPStyle">Story 1 58%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Story 2">
                         <p className="qualityPStyle">Story 2 64%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Story 3">
                         <p className="qualityPStyle">Story 3 82%</p>
                       </a>
                     </ListGroup.Item>
                   </ListGroup>
+                  </>
                 ) : null}
                 {story ? (
+                  <>
+                  <h1 className="profileTitle">Involved Tasks</h1>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Task 1">
                         <p className="qualityPStyle">Task 1 58%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Task 2">
                         <p className="qualityPStyle">Task 2 64%</p>
                       </a>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <a href="/entityReport/feature">
+                      <a href="/entityReport/Task 3">
                         <p className="qualityPStyle">Task 3 82%</p>
                       </a>
                     </ListGroup.Item>
                   </ListGroup>
+                  </>
                 ) : null}
               </Card.Body>
             </Card>
