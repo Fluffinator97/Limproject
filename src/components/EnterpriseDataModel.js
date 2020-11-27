@@ -9,27 +9,25 @@ import { ForceGraph2D } from "react-force-graph";
 import Enterprise from "../context/data/EnterpriseDataModel";
 import BackgroundNBE from "../assets/images/BackgroundNBE.jpg";
 
-
 export default function EnterpriseDataModel() {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
+  const graphWindowWidth = window.innerWidth - 100;
+  const graphWindowHeight = window.innerHeight - 150;
 
-  const distRef = useRef(null);
+  const fgRef = useRef();
 
-  useEffect(() => {
-    distRef.current.d3Force("link").distance(100);
-  });
 
   return (
     <div>
-    <img
-    src={BackgroundNBE}
-    width={windowWidth}
-    height={windowHeight}
-    style={{objectFit: "cover"}}
-    className="backgroundImageFixer"
-    alt="hello"
-  ></img>
+      <img
+        src={BackgroundNBE}
+        width={windowWidth}
+        height={windowHeight}
+        style={{ objectFit: "cover" }}
+        className="backgroundImageFixer"
+        alt="hello"
+      ></img>
       <Container fluid>
         <Row style={{ height: 30 }}></Row>
         <Row
@@ -45,7 +43,7 @@ export default function EnterpriseDataModel() {
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
-            <a href={"/profile"}  style={{paddingLeft: "60%"}}>
+            <a href={"/profile"} style={{ paddingLeft: "60%" }}>
               <FontAwesomeIcon icon={faAngleLeft} size="3x" />
             </a>
           </Col>
@@ -63,10 +61,10 @@ export default function EnterpriseDataModel() {
             md={{ span: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
-            style={{padding: 0}}
+            style={{ padding: 0 }}
           >
-            <a href={"/overall/metrics"} >
-              <FontAwesomeIcon icon={faAngleRight} size="3x"/>
+            <a href={"/overall/metrics"}>
+              <FontAwesomeIcon icon={faAngleRight} size="3x" />
             </a>
           </Col>
         </Row>
@@ -101,16 +99,41 @@ export default function EnterpriseDataModel() {
             sm={{ span: 12 }}
             xs={{ span: 12 }}
             style={{
-              textAlign: "center"
+              textAlign: "center",
             }}
           >
             <ForceGraph2D
+              ref={fgRef}
+              graphData={Enterprise}
+              width={graphWindowWidth}
+              height={graphWindowHeight}
+              nodeLabel="x"
+              nodeVal={2}
+              nodeColor={(node) => "darkgrey"}
+              nodeOpacity={10}
+              linkColor={(link) => "black"}
+              linkWidth={1}
+              cooldownTicks={100}
+              nodeCanvasObjectMode={() => "after"}
+              nodeCanvasObject={(node, ctx, globalScale) => {
+                const label = node.name;
+                const fontSize = 12 / globalScale;
+                ctx.font = `${fontSize}px Sans-Serif`;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                //Here you can choose a specific color by writing t.ex "white" or as I have done node.color to match with the node color
+                ctx.fillStyle = "black";
+                ctx.fillText(label, node.x, node.y);
+              }}
+              onEngineStop={() => fgRef.current.zoomToFit(400, 40)}
+            />
+            {/* <ForceGraph2D
               ref={distRef}
               graphData={Enterprise}
               nodeColor={(node) => "darkgrey"}
               width={windowWidth - 100}
               height={windowHeight - 150}
-              nodeLabel="name "
+              nodeLabel="name"
               nodeVal={10}
               nodeOpacity="10"
               linkColor={(link) => "black"}
@@ -126,9 +149,7 @@ export default function EnterpriseDataModel() {
                 ctx.fillText(label, node.x, node.y);
               }}
               onEngineStop={() => distRef.current.zoomToFit(400, 40)}
-              dagMode="null"
-              dagLevelDistance={100}
-            />
+            /> */}
           </Col>
           <Col></Col>
         </Row>

@@ -41,10 +41,10 @@ export default function OverallViewMetrics() {
   return (
     <div className="textAndGraphBindingBox">
       <Accordion>
-        <Accordion.Toggle as={Card.Header} eventKey="0">
+        <Accordion.Toggle as={Card.Header} eventKey="0" style={{ backgroundColor: "lightgrey"}}>
           Quality
         </Accordion.Toggle>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse eventKey="0" style={{ backgroundColor: "white"}}>
           <List>
             <ListItem button onClick={handleClick}>
               <ListItemText primary="Number of Defects" />
@@ -126,10 +126,10 @@ export default function OverallViewMetrics() {
             </ListItem>
           </List>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Card.Header} eventKey="1">
+        <Accordion.Toggle as={Card.Header} eventKey="1" style={{ backgroundColor: "lightgrey"}}>
           Productivity
         </Accordion.Toggle>
-        <Accordion.Collapse eventKey="1">
+        <Accordion.Collapse eventKey="1"  style={{ backgroundColor: "white"}}>
           <List>
             <ListItem button onClick={handleClick2}>
               <ListItemText primary="Number of Deliveries" />
@@ -193,17 +193,17 @@ export default function OverallViewMetrics() {
             </Collapse>
           </List>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Card.Header} eventKey="2">
+        <Accordion.Toggle as={Card.Header} eventKey="2" style={{ backgroundColor: "lightgrey"}}>
           Predictability
         </Accordion.Toggle>
-        <Accordion.Collapse eventKey="2">
+        <Accordion.Collapse eventKey="2"  style={{ backgroundColor: "white"}}>
           <List>
             <ListItem>
               <ListItemText primary="Planned/Actual 80%" />
             </ListItem>
           </List>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Card.Header} eventKey="3">
+        <Accordion.Toggle as={Card.Header} eventKey="3" style={{ backgroundColor: "lightgrey"}}>
           TTM
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="3">
@@ -270,10 +270,10 @@ export default function OverallViewMetrics() {
             </Collapse>
           </List>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Card.Header} eventKey="4">
+        <Accordion.Toggle as={Card.Header} eventKey="4" style={{ backgroundColor: "lightgrey"}}>
           ESI
         </Accordion.Toggle>
-        <Accordion.Collapse eventKey="4">
+        <Accordion.Collapse eventKey="4"  style={{ backgroundColor: "white"}}>
           <List>
             <ListItem>
               <ListItemText primary="Employee Satisfaction 60%" />
@@ -283,7 +283,7 @@ export default function OverallViewMetrics() {
             </ListItem>
           </List>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Card.Header} eventKey="5">
+        <Accordion.Toggle as={Card.Header} eventKey="5" style={{ backgroundColor: "lightgrey"}}>
           CSI 
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="5">
