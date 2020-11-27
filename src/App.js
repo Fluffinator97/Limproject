@@ -7,12 +7,12 @@ import EntityReport from "./components/EntityReport";
 import QualityView from "./components/QualityView";
 import ProfileGraph from "./components/ProfileGraph";
 import EnterpriseDataModel from "./components/EnterpriseDataModel";
-import UnderConstructionComp from "./components/UnderConstructionComp";
+// import UnderConstructionComp from "./components/UnderConstructionComp";
 import "./App.css";
 
 export default function App() {
-  const mql = window.matchMedia("(max-width: 1000px)");
-  let mobileView = mql.matches;
+  // const mql = window.matchMedia("(max-width: 1000px)");
+  // let mobileView = mql.matches;
 
   return (
     <div>
