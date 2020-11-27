@@ -13,7 +13,7 @@ export default function TwoDGraph() {
   setTimeout(function () {
     window.location = "overall/Metrics";
   }, delay);
-
+console.log("Hello")
   return (
     <div className="first" style={{ height: windowHeight }}>
       {/* Rendering the Graph */}
