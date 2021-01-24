@@ -39,7 +39,7 @@ export default function EntityReport() {
     <div style={{ height: "10%" }}>
       <img
         src={BackgroundNBE}
-        width={windowHeight}
+        width={"100%"}
         height={windowHeight}
         className="backgroundImageFixer"
         alt="hello"

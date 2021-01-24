@@ -43,50 +43,42 @@ export default function TwoDGraph() {
         style={{ width: "100%", height: "100%" }}
       ></iframe>
       <Container fluid>
+      <Row style={{ height: 30 }}></Row>
         <Row
           xl={{ cols: 12 }}
           lg={{ cols: 12 }}
           md={{ cols: 12 }}
           sm={{ cols: 12 }}
           xs={{ cols: 12 }}
-          style={{ paddingTop: 16 }}
         >
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1, offset: 1 }}
+            md={{ span: 1, offset: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
             {" "}
-            <a href={"/overall/Metrics"}>
-              <FontAwesomeIcon
-                icon={faAngleLeft}
-                size="3x"
-                style={{ padding: 0, margin: 0 }}
-              />
+            <a href={"/overall/Metrics"}style={{paddingLeft: "60%"}}>
+              <FontAwesomeIcon icon={faAngleLeft} size="3x" />
             </a>
           </Col>
           <Col
             lg={{ span: 8 }}
-            md={{ span: 8 }}
+            md={{ span: 6 }}
             sm={{ span: 8 }}
             xs={{ span: 8 }}
             style={{ textAlign: "center" }}
           >
-            <h1 className="entityTitle">Your Profile</h1>
+            <h1 className="overallViewTitle">Your Profile</h1>
           </Col>
           <Col
-            lg={{ span: 2 }}
-            md={{ span: 2 }}
+            lg={{ span: 1 }}
+            md={{ span: 1 }}
             sm={{ span: 2 }}
             xs={{ span: 2 }}
           >
             <a href={"/EnterpriseDataModel"}>
-              <FontAwesomeIcon
-                icon={faAngleRight}
-                size="3x"
-                style={{ padding: 0, margin: 0 }}
-              />
+            <FontAwesomeIcon icon={faAngleRight} size="3x"/>
             </a>
           </Col>
         </Row>
