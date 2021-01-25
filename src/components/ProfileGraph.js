@@ -183,19 +183,13 @@ export default function TwoDGraph() {
               <Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroup.Item>
-                    <a href="/entityReport/Feature 1">
-                      <p>Feature 1 58%</p>
-                    </a>
+                      <p>Feature 1: 58%</p>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <a href="/entityReport/Feature 2">
-                      <p>Feature 2 64%</p>
-                    </a>
+                      <p>Feature 2: 64%</p>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <a href="/entityReport/Feature 3">
-                      <p>Feature 3 82%</p>
-                    </a>
+                      <p>Feature 3: 82%</p>
                   </ListGroup.Item>
                 </ListGroup>
               </Card.Body>

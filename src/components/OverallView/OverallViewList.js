@@ -11,12 +11,7 @@ export default function OverallViewList() {
     })
     .map((node) => (
       <li className="redText overallListObjects" key={node.id}>
-        <a
-          href={"/entityReport/" + node.name}
-          className="redText"
-        >
-          <h4>{node.name}</h4>
-        </a>
+          <p>{node.name}</p>
       </li>
     ));
 
@@ -26,12 +21,7 @@ export default function OverallViewList() {
     })
     .map((node) => (
       <li className="yellowText overallListObjects" key={node.id}>
-        <a
-          href={"/entityReport/" + node.name}
-          className="yellowText"
-        >
-          <h4>{node.name}</h4>
-        </a>
+          <p>{node.name}</p>
       </li>
     ));
 
@@ -43,9 +33,7 @@ export default function OverallViewList() {
     })
     .map((node) => (
       <li className="overallListObjects" key={node.id}>
-        <a href={"/entityReport/" + node.name}>
-        <h4>{node.name}</h4>
-        </a>
+        <p>{node.name}</p>
       </li>
     ));
 

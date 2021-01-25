@@ -8,8 +8,6 @@
 #root {
   margin: 0;
   height: 100%;
-
-  
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +31,6 @@
   padding: 0;
   overflow: hidden;
 }
-
 
 .splashScreenHeader {
   font-family: "Times New Roman", Times, serif;
@@ -76,7 +73,6 @@
   width: 100%;
 }
 
-
 .overallViewTitle {
   margin: 0 5% 0 5%;
   font-family: "Times New Roman", Times, serif;
@@ -105,7 +101,6 @@
   pointer-events: none;
   border-radius: 10px;
 }
-
 
 .entityTypeTitle {
   margin: 5% 0 5%;
@@ -163,7 +158,7 @@
   z-index: 1000000000;
   margin: 0 0 3px 0;
   color: white;
-  text-align: center; 
+  text-align: center;
 }
 
 .logoSVG {
@@ -178,7 +173,7 @@
   width: 100%;
 }
 
-.backgroundImageFixer{
+.backgroundImageFixer {
   z-index: -1;
   position: fixed;
 }
@@ -204,7 +199,7 @@
   z-index: 1000000000;
   margin: 0 0 3px 0;
   color: black;
-  text-align: center; 
+  text-align: center;
 }
 
 .overallViewStats {
@@ -229,7 +224,5 @@
 
 .overallListObjects {
   font-family: "Times New Roman", Times, serif;
-  background-color: rgb(127, 127, 127, 0.5);
-  margin-bottom: 1px;
-  padding: 5px 0px 5px 0px;
+  margin: 0;
 }

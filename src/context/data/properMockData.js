@@ -727,7 +727,8 @@ export const nodes = [
 {id:725,  "name": "Story 3",      "pE":716,   "Team":null,  "pOD":  "67%","pVA":"100%","pM":1,"jS":0,"lT":null,"pDD":"11/5/2021","eTOC":"11/27/2021","tD":11,"pV":"Same","nOI":0,"nOPT":0,"nOB":0,"nOP":0, lowest: "", group: 100 }, 
 {id:726,  "name": "Task 1",       "pE":725,   "Team":null,  "pOD":  "100%","pVA":"100%","pM":1,"jS":0,"lT":null,"pDD":"1/16/2020","eTOC":"1/2/2020","tD":2,"pV":"Down","nOI":2,"nOPT":2,"nOB":1,"nOP":6, lowest: "", group: 100 }, 
 {id:727,  "name": "Task 2",       "pE":725,   "Team":null,  "pOD":  "0%","pVA":"100%","pM":0,"jS":0,"lT":null,"pDD":"1/21/2020","eTOC":"1/24/2020","tD":18,"pV":"Up","nOI":0,"nOPT":1,"nOB":1,"nOP":3, lowest: "", group: 100 }, 
-{id:728,  "name": "Task 3",       "pE":725,   "Team":null,  "pOD":  "100%","pVA":"100%","pM":0,"jS":0,"lT":null,"pDD":"1/10/2020","eTOC":"1/16/2020","tD":13,"pV":"Up","nOI":1,"nOPT":0,"nOB":0,"nOP":7, lowest: "", group: 100}];
+{id:728,  "name": "Task 3",       "pE":725,   "Team":null,  "pOD":  "100%","pVA":"100%","pM":0,"jS":0,"lT":null,"pDD":"1/10/2020","eTOC":"1/16/2020","tD":13,"pV":"Up","nOI":1,"nOPT":0,"nOB":0,"nOP":7, lowest: "", group: 100}
+];
 
 export const links = [
 {source:   1, target: 0   , lowest: "", group: 100 },  

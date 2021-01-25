@@ -29,6 +29,7 @@ export default function DesktopView() {
   const percentOfGoodNodes = numberOfGoodNodes.toFixed(2);
   const percentOfBadNodes = numberOfBadNodes.toFixed(2);
   const percentOfReallyBadNodes = numberOfReallyBadNodes.toFixed(2);
+  
   return (
     <div>
       <Container fluid>
